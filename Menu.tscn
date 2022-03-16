@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Menu.gd" type="Script" id=1]
+[ext_resource path="res://sky.jpg" type="Texture" id=2]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sky" type="Sprite" parent="."]
+position = Vector2( 534, 378 )
+texture = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -193.5
+margin_top = -58.0
+margin_right = 193.5
+margin_bottom = 58.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Profile" type="Button" parent="VBoxContainer"]
+margin_right = 387.0
+margin_bottom = 20.0
+focus_neighbour_top = NodePath("../Quit")
+text = "Profile"
+
+[node name="Character Selection" type="Button" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 387.0
+margin_bottom = 44.0
+text = "Character Selection"
+
+[node name="Map" type="Button" parent="VBoxContainer"]
+margin_top = 48.0
+margin_right = 387.0
+margin_bottom = 68.0
+text = "Map"
+
+[node name="Friend List" type="Button" parent="VBoxContainer"]
+margin_top = 72.0
+margin_right = 387.0
+margin_bottom = 92.0
+text = "Friend List"
+
+[node name="Achievement" type="Button" parent="VBoxContainer"]
+margin_top = 96.0
+margin_right = 387.0
+margin_bottom = 116.0
+text = "Achievement"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+margin_top = 120.0
+margin_right = 387.0
+margin_bottom = 140.0
+focus_neighbour_bottom = NodePath("../Profile")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Profile" to="." method="_on_Profile_pressed"]
+[connection signal="pressed" from="VBoxContainer/Character Selection" to="." method="_on_Character_Selection_pressed"]
+[connection signal="pressed" from="VBoxContainer/Map" to="." method="_on_Map_pressed"]
+[connection signal="pressed" from="VBoxContainer/Friend List" to="." method="_on_Friend_List_pressed"]
+[connection signal="pressed" from="VBoxContainer/Achievement" to="." method="_on_Achievement_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_Achievement_pressed"]

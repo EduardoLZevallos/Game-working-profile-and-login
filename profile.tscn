@@ -1,0 +1,247 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://onichan.png" type="Texture" id=1]
+[ext_resource path="res://background.png" type="Texture" id=2]
+[ext_resource path="res://charbackground.png" type="Texture" id=3]
+[ext_resource path="res://fonts/cmu-typewriter/Typewriter.tres" type="DynamicFont" id=4]
+[ext_resource path="res://profile.gd" type="Script" id=5]
+[ext_resource path="res://friendsearch.gd" type="Script" id=6]
+[ext_resource path="res://nameback.png" type="Texture" id=7]
+[ext_resource path="res://under.png" type="Texture" id=8]
+[ext_resource path="res://over.png" type="Texture" id=9]
+
+[node name="profile" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 13.0
+margin_right = 15.0
+margin_bottom = 6.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -10.0
+margin_top = -17.0
+margin_right = -10.0
+margin_bottom = -17.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="innerlayer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -5.0
+margin_right = -20.0
+margin_bottom = -30.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="charbackground" type="NinePatchRect" parent="innerlayer"]
+margin_right = 250.0
+margin_bottom = 575.0
+rect_min_size = Vector2( 250, 564 )
+texture = ExtResource( 3 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="innerlayer/charbackground"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -91.0
+margin_top = -275.0
+margin_right = 112.0
+margin_bottom = 198.0
+rect_min_size = Vector2( 203, 473 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="innerlayer/charbackground"]
+margin_top = 23.0
+margin_right = 246.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 246, 42 )
+custom_fonts/font = ExtResource( 4 )
+text = "Name"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="innerlayer"]
+margin_left = 254.0
+margin_right = 1019.0
+margin_bottom = 575.0
+rect_min_size = Vector2( 730, 564 )
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="innerlayer/VBoxContainer"]
+margin_right = 765.0
+margin_bottom = 68.0
+rect_min_size = Vector2( 755, 68 )
+
+[node name="friendshippoints" type="TextureProgress" parent="innerlayer/VBoxContainer/VBoxContainer"]
+margin_right = 765.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 550, 60 )
+value = 50.0
+texture_under = ExtResource( 8 )
+texture_progress = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="innerlayer/VBoxContainer/VBoxContainer/friendshippoints"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 14.0
+margin_right = -197.0
+rect_min_size = Vector2( 558, 46 )
+custom_fonts/font = ExtResource( 4 )
+text = "FRIENDSHIP POINTS!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="innerlayer/VBoxContainer"]
+margin_top = 72.0
+margin_right = 765.0
+margin_bottom = 575.0
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="innerlayer/VBoxContainer/VBoxContainer2"]
+margin_right = 765.0
+margin_bottom = 503.0
+rect_min_size = Vector2( 755, 503 )
+size_flags_vertical = 3
+script = ExtResource( 6 )
+
+[node name="LineEdit" type="LineEdit" parent="innerlayer/VBoxContainer/VBoxContainer2/Control"]
+margin_left = 98.0
+margin_top = 56.0
+margin_right = 463.0
+margin_bottom = 126.0
+rect_min_size = Vector2( 365, 70 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="innerlayer/VBoxContainer/VBoxContainer2/Control"]
+margin_left = 98.0
+margin_top = 130.0
+margin_right = 459.0
+margin_bottom = 424.0
+rect_min_size = Vector2( 363, 301 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="listoffriends" type="VBoxContainer" parent="innerlayer/VBoxContainer/VBoxContainer2/Control/ScrollContainer"]
+margin_right = 363.0
+margin_bottom = 301.0
+rect_min_size = Vector2( 363, 301 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="innerlayer/VBoxContainer/VBoxContainer2/Control/ScrollContainer/listoffriends"]
+margin_right = 363.0
+margin_bottom = 47.0
+rect_min_size = Vector2( 363, 47 )
+custom_fonts/font = ExtResource( 4 )
+text = "Eduardo"
+
+[node name="Button2" type="Button" parent="innerlayer/VBoxContainer/VBoxContainer2/Control/ScrollContainer/listoffriends"]
+margin_top = 51.0
+margin_right = 363.0
+margin_bottom = 98.0
+custom_fonts/font = ExtResource( 4 )
+text = "Michael"
+
+[node name="Button3" type="Button" parent="innerlayer/VBoxContainer/VBoxContainer2/Control/ScrollContainer/listoffriends"]
+margin_top = 102.0
+margin_right = 363.0
+margin_bottom = 149.0
+custom_fonts/font = ExtResource( 4 )
+text = "Melissa"
+
+[node name="exit" type="Button" parent="innerlayer/VBoxContainer/VBoxContainer2/Control"]
+margin_left = 86.0
+margin_top = 436.0
+margin_right = 227.0
+margin_bottom = 506.0
+rect_min_size = Vector2( 141, 70 )
+custom_fonts/font = ExtResource( 4 )
+text = "EXIT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back" type="Button" parent="innerlayer/VBoxContainer/VBoxContainer2/Control"]
+margin_left = 565.0
+margin_top = 434.0
+margin_right = 706.0
+margin_bottom = 504.0
+rect_min_size = Vector2( 141, 70 )
+custom_fonts/font = ExtResource( 4 )
+text = "BACK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PLAY" type="Button" parent="innerlayer/VBoxContainer/VBoxContainer2/Control"]
+margin_left = 332.0
+margin_top = 435.0
+margin_right = 473.0
+margin_bottom = 505.0
+rect_min_size = Vector2( 141, 70 )
+custom_fonts/font = ExtResource( 4 )
+text = "PLAY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="findfriends" type="Button" parent="innerlayer/VBoxContainer/VBoxContainer2/Control"]
+margin_left = 504.0
+margin_top = 181.0
+margin_right = 737.0
+margin_bottom = 251.0
+rect_min_size = Vector2( 141, 70 )
+custom_fonts/font = ExtResource( 4 )
+text = "Find Friends!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="innerlayer/VBoxContainer/VBoxContainer2/Control"]
+margin_left = 96.0
+margin_right = 461.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 365, 55 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="innerlayer/VBoxContainer/VBoxContainer2/Control/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 11.0
+rect_min_size = Vector2( 365, 44 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="text_changed" from="innerlayer/VBoxContainer/VBoxContainer2/Control/LineEdit" to="innerlayer/VBoxContainer/VBoxContainer2/Control" method="_on_LineEdit_text_changed"]
+[connection signal="pressed" from="innerlayer/VBoxContainer/VBoxContainer2/Control/exit" to="innerlayer/VBoxContainer/VBoxContainer2/Control" method="_on_exit_pressed"]
+[connection signal="pressed" from="innerlayer/VBoxContainer/VBoxContainer2/Control/back" to="innerlayer/VBoxContainer/VBoxContainer2/Control" method="_on_back_pressed"]
+[connection signal="pressed" from="innerlayer/VBoxContainer/VBoxContainer2/Control/PLAY" to="innerlayer/VBoxContainer/VBoxContainer2/Control" method="_on_PLAY_pressed"]
+[connection signal="pressed" from="innerlayer/VBoxContainer/VBoxContainer2/Control/findfriends" to="innerlayer/VBoxContainer/VBoxContainer2/Control" method="_on_findfriends_pressed"]

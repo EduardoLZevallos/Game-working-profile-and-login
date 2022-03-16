@@ -1,0 +1,139 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Nonbinary.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tile.jpg" type="Texture" id=2]
+[ext_resource path="res://worldtile.tres" type="TileSet" id=3]
+[ext_resource path="res://sky.jpg" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 74.5, 36 )
+
+[node name="Level1" type="Node2D"]
+
+[node name="Floor1" type="StaticBody2D" parent="."]
+position = Vector2( 148, 341 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floor1"]
+position = Vector2( -71.375, 0 )
+scale = Vector2( 0.17418, 0.0843058 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1"]
+position = Vector2( -71.5, 0 )
+shape = SubResource( 2 )
+
+[node name="Floor2" type="StaticBody2D" parent="."]
+position = Vector2( 293, 341 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floor2"]
+position = Vector2( -71.375, 0 )
+scale = Vector2( 0.17418, 0.0843058 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
+position = Vector2( -71.5, 0 )
+shape = SubResource( 2 )
+
+[node name="Floor3" type="StaticBody2D" parent="."]
+position = Vector2( 440, 342 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floor3"]
+position = Vector2( -71.375, 0 )
+scale = Vector2( 0.17418, 0.0843058 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor3"]
+position = Vector2( -71.5, 0 )
+shape = SubResource( 2 )
+
+[node name="Floor4" type="StaticBody2D" parent="."]
+position = Vector2( 587, 342 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floor4"]
+position = Vector2( -71.375, 0 )
+scale = Vector2( 0.17418, 0.0843058 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor4"]
+position = Vector2( -71.5, 0 )
+shape = SubResource( 2 )
+
+[node name="Floor5" type="StaticBody2D" parent="."]
+position = Vector2( 738, 294 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floor5"]
+position = Vector2( -71.375, 0 )
+scale = Vector2( 0.17418, 0.0843058 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor5"]
+position = Vector2( -71.5, 0 )
+shape = SubResource( 2 )
+
+[node name="Floor6" type="StaticBody2D" parent="."]
+position = Vector2( 887, 239 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floor6"]
+position = Vector2( -71.375, 0 )
+scale = Vector2( 0.17418, 0.0843058 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor6"]
+position = Vector2( -71.5, 0 )
+shape = SubResource( 2 )
+
+[node name="Floor7" type="StaticBody2D" parent="."]
+position = Vector2( 1035, 239 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floor7"]
+position = Vector2( -71.375, 0 )
+scale = Vector2( 0.17418, 0.0843058 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor7"]
+position = Vector2( -71.5, 0 )
+shape = SubResource( 2 )
+
+[node name="Nonbinary" parent="." instance=ExtResource( 1 )]
+position = Vector2( 454, 102 )
+
+[node name="Camera2D" type="Camera2D" parent="Nonbinary"]
+current = true
+drag_margin_h_enabled = true
+drag_margin_left = 0.3
+drag_margin_right = 0.3
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+format = 1
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="green" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 3840, 2160 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/green"]
+position = Vector2( 4, 44 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
