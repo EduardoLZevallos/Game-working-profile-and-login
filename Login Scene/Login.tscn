@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Login Scene/Login.gd" type="Script" id=1]
+[ext_resource path="res://firebase-ui/auth/sign_container/sign_container.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Login Scene/Music/yt5s.com - Marvel Vs Capcom 2 Music - Opening Title theme (128 kbps)-[AudioTrimmer.com].mp3" type="AudioStream" id=3]
+
+[node name="LoginControl" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 215.0
+margin_top = 9.0
+margin_right = -129.0
+margin_bottom = 9.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SignContainer" parent="." instance=ExtResource( 2 )]
+anchor_left = 0.210294
+anchor_top = 0.0866667
+anchor_right = 0.757616
+anchor_bottom = 0.793333
+automatic_signup = false
+anonymous_signup = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 296.0
+margin_top = 31.0
+margin_right = 333.0
+margin_bottom = 45.0
+text = "JAMZ"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

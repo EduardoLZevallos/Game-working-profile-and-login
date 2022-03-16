@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/yt5s.com - Marvel Vs Capcom 2 Music - Opening Title theme (128 kbps)-[AudioTrimmer.com].mp3-83cc11fa523f24bb65d0cc0379e0757b.mp3str"
+
+[deps]
+
+source_file="res://Login Scene/Music/yt5s.com - Marvel Vs Capcom 2 Music - Opening Title theme (128 kbps)-[AudioTrimmer.com].mp3"
+dest_files=[ "res://.import/yt5s.com - Marvel Vs Capcom 2 Music - Opening Title theme (128 kbps)-[AudioTrimmer.com].mp3-83cc11fa523f24bb65d0cc0379e0757b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
